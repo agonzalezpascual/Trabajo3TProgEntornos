@@ -1,0 +1,25 @@
+public void initialize(URL url, ResourceBundle rb) {
+        
+        iniciaCombos();
+        
+        // TODO
+    }
+    
+    public void iniciaCombos(){
+    
+    grupoSang = FXCollections.observableArrayList();
+        grupoSang.add("A");
+        grupoSang.add("B");
+        grupoSang.add("0");
+        comboGrup.setItems(grupoSang);
+        comboComGrup.setItems(grupoSang);
+        
+        factorRH = FXCollections.observableArrayList();
+        factorRH.add("+");
+        factorRH.add("-");
+        ComboRH.setItems(factorRH);
+        ComboComRH.setItems(factorRH);
+    
+    }
+    
+}

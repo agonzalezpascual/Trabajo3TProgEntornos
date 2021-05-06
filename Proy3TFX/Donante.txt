@@ -1,0 +1,41 @@
+public class Donante {
+    
+    private String DNI;
+    
+    private String Nombre;
+    
+    private String Direccion;
+    
+    private String CodPosatal;
+    
+    private String Localidad;
+    
+    private String FechaNac;
+    
+    private String Correo;
+    
+    private String Telefono;
+    
+    private String GrupoSang;
+    
+    private String FactorRH;
+    
+    private int PK;
+
+    public Donante(String DNI, String Nombre, String Direccion, String CodPosatal, String Localidad, String FechaNac, String Correo, String Telefono, String GrupoSang, String FactorRH, int PK) {
+        this.DNI = DNI;
+        this.Nombre = Nombre;
+        this.Direccion = Direccion;
+        this.CodPosatal = CodPosatal;
+        this.Localidad = Localidad;
+        this.FechaNac = FechaNac;
+        this.Correo = Correo;
+        this.Telefono = Telefono;
+        this.GrupoSang = GrupoSang;
+        this.FactorRH = FactorRH;
+        this.PK = PK;
+    }
+    
+    
+    
+}
