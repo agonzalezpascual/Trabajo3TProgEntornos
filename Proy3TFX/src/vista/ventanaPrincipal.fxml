@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VentanaPrincipalController">
+   <children>
+      <TabPane layoutX="-1.0" prefHeight="700.0" prefWidth="815.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Donantes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="647.0" prefWidth="815.0">
+                     <children>
+                        <Label layoutX="54.0" layoutY="61.0" text="DNI" />
+                        <TextField fx:id="txtDNI" layoutX="142.0" layoutY="57.0" />
+                        <TextField fx:id="txtNom" layoutX="142.0" layoutY="107.0" />
+                        <Label layoutX="54.0" layoutY="111.0" text="Nombre" />
+                        <TextField fx:id="txtDir" layoutX="142.0" layoutY="156.0" />
+                        <Label layoutX="54.0" layoutY="160.0" text="Dirección" />
+                        <TextField fx:id="txtTel" layoutX="142.0" layoutY="207.0" />
+                        <Label layoutX="54.0" layoutY="211.0" text="Teléfono" />
+                        <Label layoutX="413.0" layoutY="27.0" text="Fecha de nacimiento" />
+                        <DatePicker fx:id="Fecna" layoutX="390.0" layoutY="57.0" />
+                        <Label layoutX="376.0" layoutY="111.0" text="Grupo sanguíneo" />
+                        <Label layoutX="376.0" layoutY="160.0" text="Factor RH" />
+                        <ComboBox fx:id="comboGrup" layoutX="484.0" layoutY="107.0" prefHeight="25.0" prefWidth="79.0" />
+                        <ComboBox fx:id="ComboRH" layoutX="485.0" layoutY="156.0" prefHeight="25.0" prefWidth="78.0" />
+                        <TableView fx:id="tablaDonantes" layoutX="18.0" layoutY="242.0" prefHeight="345.0" prefWidth="779.0">
+                          <columns>
+                            <TableColumn fx:id="colDonDNI" prefWidth="105.0" text="DNI" />
+                            <TableColumn fx:id="colDonNom" prefWidth="97.0" text="Nombre" />
+                              <TableColumn fx:id="colDonDir" prefWidth="125.0" text="Dirección" />
+                              <TableColumn fx:id="colDonTel" prefWidth="78.0" text="Teléfono" />
+                              <TableColumn fx:id="colDonFec" prefWidth="133.0" text="Fecha de Nacimiento" />
+                              <TableColumn fx:id="colDonGrup" prefWidth="144.0" text="Grupo Sanguíneo" />
+                              <TableColumn fx:id="colDonRH" prefWidth="96.0" text="Factor RH" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="botConDNI" layoutX="45.0" layoutY="611.0" mnemonicParsing="false" text="Consultar DNI" />
+                        <Button fx:id="botConTod" layoutX="200.0" layoutY="611.0" mnemonicParsing="false" text="Consultar todos" />
+                        <Button fx:id="botIns" layoutX="364.0" layoutY="611.0" mnemonicParsing="false" text="Insertar" />
+                        <Button fx:id="botMod" layoutX="512.0" layoutY="611.0" mnemonicParsing="false" text="Modificar" />
+                        <Button fx:id="botEli" layoutX="646.0" layoutY="611.0" mnemonicParsing="false" text="Eliminar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Donaciones">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="97.0" layoutY="81.0" text="DNI Donante" />
+                        <TextField fx:id="txtDonaDNI" layoutX="192.0" layoutY="77.0" />
+                        <Button fx:id="botDonaCons" layoutX="494.0" layoutY="77.0" mnemonicParsing="false" text="Consultar Donaciones" />
+                        <TextField fx:id="txtDonaNom" layoutX="192.0" layoutY="153.0" />
+                        <Label layoutX="97.0" layoutY="157.0" text="Nombre Donante" />
+                        <TextField fx:id="txtDonaGrup" layoutX="494.0" layoutY="153.0" />
+                        <Label layoutX="399.0" layoutY="157.0" text="Tipo sangre" />
+                        <TableView fx:id="tablaDonanciones" layoutX="18.0" layoutY="223.0" prefHeight="345.0" prefWidth="779.0">
+                           <columns>
+                              <TableColumn fx:id="colDonaCod" prefWidth="105.0" text="Cod. Sanitario" />
+                              <TableColumn fx:id="colDonaNom" prefWidth="232.0" text="Nombre Centro" />
+                              <TableColumn fx:id="colDonaFec" prefWidth="193.0" text="Fecha Donación" />
+                              <TableColumn fx:id="colDonaCan" prefWidth="248.0" text="Cantidad" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Compatibilidad">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="comboComGrup" layoutX="249.0" layoutY="109.0" prefHeight="25.0" prefWidth="79.0" />
+                        <Label layoutX="126.0" layoutY="187.0" text="Factor RH" />
+                        <Label layoutX="126.0" layoutY="113.0" text="Grupo sanguíneo" />
+                        <Button fx:id="botCom" layoutX="144.0" layoutY="292.0" mnemonicParsing="false" text="Averigua Compatibilidad" />
+                        <TableView fx:id="tabCom" layoutX="432.0" layoutY="96.0" prefHeight="467.0" prefWidth="359.0">
+                          <columns>
+                            <TableColumn fx:id="colDa" prefWidth="180.0" text="Puede donar a" />
+                            <TableColumn fx:id="colRecibe" prefWidth="178.0" text="Puede recibir de" />
+                          </columns>
+                        </TableView>
+                        <ComboBox fx:id="ComboComRH" layoutX="249.0" layoutY="183.0" prefHeight="25.0" prefWidth="79.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
