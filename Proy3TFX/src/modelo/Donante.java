@@ -5,6 +5,9 @@
  */
 package modelo;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 /**
  *
  * @author dam1
@@ -21,7 +24,7 @@ public class Donante {
     
     private String Localidad;
     
-    private String FechaNac;
+    private LocalDate FechaNac;
     
     private String Correo;
     
@@ -36,7 +39,7 @@ public class Donante {
     public Donante() {
     }
 
-    public Donante(String DNI, String Nombre, String Direccion, String CodPosatal, String Localidad, String FechaNac, String Correo, String Telefono, String GrupoSang, String FactorRH, int PK) {
+    public Donante(String DNI, String Nombre, String Direccion, String CodPosatal, String Localidad, LocalDate FechaNac, String Correo, String Telefono, String GrupoSang, String FactorRH, int PK) {
         this.DNI = DNI;
         this.Nombre = Nombre;
         this.Direccion = Direccion;
@@ -69,6 +72,10 @@ public class Donante {
     public String getDireccion() {
         return getLocalidad()+ ", " +  Direccion  + ", "+ getCodPostal() ;
     }
+    
+    public String getSoloDireccion() {
+        return Direccion;
+    }
 
     public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
@@ -90,11 +97,11 @@ public class Donante {
         this.Localidad = Localidad;
     }
 
-    public String getFechaNac() {
+    public LocalDate getFechaNac() {
         return FechaNac;
     }
 
-    public void setFechaNac(String FechaNac) {
+    public void setFechaNac(LocalDate FechaNac) {
         this.FechaNac = FechaNac;
     }
 
@@ -136,6 +143,10 @@ public class Donante {
 
     public void setPK(int PK) {
         this.PK = PK;
+    }
+
+    public String getCodPosatal() {
+        return CodPosatal;
     }
     
     

@@ -5,9 +5,11 @@
  */
 package controlador;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import static java.util.Collections.list;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
@@ -16,7 +18,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -29,8 +34,11 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import modelo.Donante;
+import modelo.IOBaseDatos;
 
 /**
  * FXML Controller class
@@ -143,6 +151,8 @@ public class VentanaPrincipalController implements Initializable {
     private List<String> Bdo =new ArrayList<String>();
     private List<String> Odo =new ArrayList<String>();
     private List<String> ABdo =new ArrayList<String>();
+    
+    private IOBaseDatos IO = new IOBaseDatos();
 
     /**
      * Initializes the controller class.
@@ -228,8 +238,8 @@ public class VentanaPrincipalController implements Initializable {
     }
     
     @FXML
-    public void meteDonante(){
-        try{
+    public void meteDonante() throws IOException{
+        /*try{
         String dni = this.txtDNI.getText();
         String nom = this.txtNom.getText();
         String dir = this.txtDir.getText();
@@ -255,6 +265,41 @@ public class VentanaPrincipalController implements Initializable {
             alert.showAndWait();
         
         
+        }*/
+        
+        try{  
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/ventanaanadir.fxml"));
+        Parent root = loader.load();
+        VentanaanadirController controlador = loader.getController();
+        controlador.initAttributtes(donantes);
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
+    
+        Donante d = controlador.getDonante();
+            if (d != null) {
+
+                // Añado la persona
+                this.donantes.add(d);
+                /*if(d.getNom().contains(this.textFiltro.getText())){
+                this.filtroPersonas.add(d);*/
+                
+                }
+
+                // Refresco la tabla
+                this.tablaDonantes.setItems(donantes);
+                this.tablaDonantes.refresh();
+            }
+                
+                 catch (IOException ex) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText(ex.getMessage());
+            alert.showAndWait();
         }
     
     
@@ -262,12 +307,12 @@ public class VentanaPrincipalController implements Initializable {
 
     @FXML
     private void modificaDonante(ActionEvent event) {
-        try{
+        /*try{
             String dni = this.txtDNI.getText();
         String nom = this.txtNom.getText();
         String dir = this.txtDir.getText();
         String tel = this.txtTel.getText();
-        String fecna = this.Fecna.getValue().toString();
+        LocalDate fecna = this.Fecna.getValue();
         String grupo = this.comboGrup.getValue();
         String rh = this.ComboRH.getValue();
         String email = this.txtEmail.getText();
@@ -286,15 +331,55 @@ public class VentanaPrincipalController implements Initializable {
             alert.showAndWait();
         
         
+        }*/
+        
+        Donante d = this.tablaDonantes.getSelectionModel().getSelectedItem();                  
+                    try{  
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/ventanaanadir.fxml"));
+        Parent root = loader.load();
+        VentanaanadirController controlador = loader.getController();
+        controlador.initAttributtes(donantes, d);
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
+    
+        Donante aux = controlador.getDonante();
+            if (aux != null) {
+
+                this.tablaDonantes.refresh();
+                /*if(!d.getNom().contains(this.textFiltro.getText())){
+                
+                
+                }*/
+                
+                this.tablaDonantes.refresh();
+            }
+                
+                } catch (IOException ex) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText(ex.getMessage());
+            alert.showAndWait();
         }
+        
     }
     
     @FXML
-    private void eliminarDonante(){
+    private void eliminarDonante() throws SQLException{
 
+        
+        
         ObservableList<Donante> allProduct,SingleProduct;
         allProduct=tablaDonantes.getItems();
         SingleProduct=tablaDonantes.getSelectionModel().getSelectedItems();
+        String dniBorrar = SingleProduct.get(0).getDNI();
+        this.IO.actualizaRegistros("DELETE FROM DONANTES where DNI ='" + dniBorrar+ "'");
+        System.out.print("DELETE FROM Donantes where id ='" + dniBorrar+ "'");
+               
         SingleProduct.forEach(allProduct::remove);
     
 
