@@ -68,10 +68,12 @@
                         <Label layoutX="399.0" layoutY="157.0" text="Tipo sangre" />
                         <TableView fx:id="tablaDonanciones" layoutX="18.0" layoutY="223.0" prefHeight="345.0" prefWidth="779.0">
                            <columns>
-                              <TableColumn fx:id="colDonaCod" prefWidth="105.0" text="Cod. Sanitario" />
-                              <TableColumn fx:id="colDonaNom" prefWidth="232.0" text="Nombre Centro" />
-                              <TableColumn fx:id="colDonaFec" prefWidth="193.0" text="Fecha Donación" />
-                              <TableColumn fx:id="colDonaCan" prefWidth="248.0" text="Cantidad" />
+                              <TableColumn fx:id="colDonaCod" prefWidth="136.0" text="Cod. Sanitario" />
+                              <TableColumn fx:id="colDonaNomS" prefWidth="151.0" text="Nombre Sanitario" />
+                              <TableColumn fx:id="colDonaTel" prefWidth="116.0" text="Telefono Sanitario" />
+                              <TableColumn fx:id="colDonaNom" prefWidth="174.0" text="Nombre Centro" />
+                              <TableColumn fx:id="colDonaFec" prefWidth="128.0" text="Fecha Donación" />
+                              <TableColumn fx:id="colDonaCan" prefWidth="73.0" text="Cantidad" />
                            </columns>
                         </TableView>
                      </children>

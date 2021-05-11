@@ -39,7 +39,7 @@ public class Donante {
     public Donante() {
     }
 
-    public Donante(String DNI, String Nombre, String Direccion, String CodPosatal, String Localidad, LocalDate FechaNac, String Correo, String Telefono, String GrupoSang, String FactorRH, int PK) {
+    public Donante(String DNI, String Nombre, String Direccion, String CodPosatal, String Localidad, LocalDate FechaNac, String Correo, String Telefono, String GrupoSang, String FactorRH) {
         this.DNI = DNI;
         this.Nombre = Nombre;
         this.Direccion = Direccion;
@@ -50,7 +50,6 @@ public class Donante {
         this.Telefono = Telefono;
         this.GrupoSang = GrupoSang;
         this.FactorRH = FactorRH;
-        this.PK = PK;
     }
 
     public String getDNI() {

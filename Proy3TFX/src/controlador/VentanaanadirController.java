@@ -134,7 +134,7 @@ public class VentanaanadirController implements Initializable {
         
 
 // Creo la persona
-         Donante d = new Donante(dni,nom,dir,cp,loc,fecna,email,tel,grupo,rh,1);
+         Donante d = new Donante(dni,nom,dir,cp,loc,fecna,email,tel,grupo,rh);
          IOBaseDatos IO = new IOBaseDatos();
 
         // Compruebo si la persona existe

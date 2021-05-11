@@ -7,11 +7,14 @@ package controlador;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -37,8 +40,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import modelo.Donacion;
 import modelo.Donante;
 import modelo.IOBaseDatos;
+import modelo.IODonantesDat;
 
 /**
  * FXML Controller class
@@ -96,15 +101,23 @@ public class VentanaPrincipalController implements Initializable {
     @FXML
     private TextField txtDonaGrup;
     @FXML
-    private TableView<?> tablaDonanciones;
+    private TableView<Donacion> tablaDonanciones;
     @FXML
-    private TableColumn<?, ?> colDonaCod;
+    private TableColumn<Donacion, String> colDonaCod;
     @FXML
-    private TableColumn<?, ?> colDonaNom;
+    private TableColumn<Donacion, String> colDonaNom;
     @FXML
-    private TableColumn<?, ?> colDonaFec;
+    private TableColumn<Donacion, String> colDonaFec;
     @FXML
-    private TableColumn<?, ?> colDonaCan;
+    private TableColumn<Donacion, String> colDonaCan;
+    @FXML
+    private TableColumn<Donacion, String> colDonaNomS;
+    @FXML
+    private TableColumn<Donacion, String> colDonaTel;
+
+    
+    private ObservableList<Donacion> donaciones;
+    
     @FXML
     private ComboBox<String> ComboComRH;
     @FXML
@@ -153,7 +166,8 @@ public class VentanaPrincipalController implements Initializable {
     private List<String> ABdo =new ArrayList<String>();
     
     private IOBaseDatos IO = new IOBaseDatos();
-
+    private IODonantesDat IOD = new IODonantesDat();
+    
     /**
      * Initializes the controller class.
      */
@@ -163,6 +177,16 @@ public class VentanaPrincipalController implements Initializable {
         iniciaCombos();
         iniciaTablaDon();
         iniciaLista();
+        try {
+            iniciaRegistros();
+        } catch (SQLException ex) {
+            Logger.getLogger(VentanaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            this.IOD.introDatos("12345698F", 2, "2015-01-26", 501,false);
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         filtroDonantes = FXCollections.observableArrayList();
         compatiblesR = FXCollections.observableArrayList();
         compatiblesD = FXCollections.observableArrayList();
@@ -201,6 +225,31 @@ public class VentanaPrincipalController implements Initializable {
     
     }
     
+    public void iniciaRegistros() throws SQLException{
+    
+    ResultSet r = IO.introduceRegistros("SELECT * FROM DONANTES");
+    
+    System.out.print(r);
+    
+    while (r.next()) {
+        Donante d = new Donante(r.getString("DNI"),r.getString("Nombre"),r.getString("Direccion"),r.getString("CodPostal"),r.getString("Localidad"),LocalDate.parse(r.getString("FechaNac")),r.getString("Correo"),r.getString("Telefono"),r.getString("GrupoSang"),r.getString("FactorRH"));
+ 
+        if (d != null) {
+
+                // Añado la persona
+                this.donantes.add(d);
+                
+                }
+
+                // Refresco la tabla
+                this.tablaDonantes.setItems(donantes);
+                this.tablaDonantes.refresh();
+            }
+        
+}
+    
+    
+    
     
     public void iniciaCombos(){
     
@@ -222,6 +271,7 @@ public class VentanaPrincipalController implements Initializable {
     
     public void iniciaTablaDon(){
     
+    //Inicia la tabla Donantes
     donantes = FXCollections.observableArrayList();
     
     
@@ -234,6 +284,22 @@ public class VentanaPrincipalController implements Initializable {
     this.colDonGrup.setCellValueFactory(new PropertyValueFactory<>("GrupoSang"));
     this.colDonRH.setCellValueFactory(new PropertyValueFactory<>("FactorRH"));
             
+    
+    //Inicia la tabla Donaciones
+    this.donaciones  = FXCollections.observableArrayList();
+    this.colDonaCan.setCellValueFactory(new PropertyValueFactory<>("cant"));
+    this.colDonaCod.setCellValueFactory(new PropertyValueFactory<>("codSan"));
+    this.colDonaFec.setCellValueFactory(new PropertyValueFactory<>("fecDon"));
+    this.colDonaNom.setCellValueFactory(new PropertyValueFactory<>("nomCen"));
+    this.colDonaNomS.setCellValueFactory(new PropertyValueFactory<>("nomSan"));
+    this.colDonaTel.setCellValueFactory(new PropertyValueFactory<>("telSan"));
+    
+    donaciones.add(new Donacion("13123","qweqew","weqwe","weqew","13123","qweqew","weqwe","weqew"));
+    this.tablaDonanciones.setItems(donaciones);
+    this.tablaDonanciones.refresh();
+    
+    
+    
     
     }
     
@@ -496,9 +562,12 @@ public class VentanaPrincipalController implements Initializable {
     }
 
     @FXML
-    private void botConDon(ActionEvent event) {
+    private void botConDon(ActionEvent event) throws IOException {
         
         String DNIDonante = this.txtDonaDNI.getText();
+        this.donaciones.add(IOD.leerDatosDat(DNIDonante));
+        this.tablaDonanciones.refresh();
+        
         
         for(Donante d:this.donantes){
                 if(d.getDNI().contains(DNIDonante)){
