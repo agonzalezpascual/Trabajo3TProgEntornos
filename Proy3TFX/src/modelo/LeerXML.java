@@ -18,6 +18,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -27,8 +28,9 @@ import org.w3c.dom.NodeList;
  */
 public class LeerXML {
     
-    /*protected void leerDatosXML(String dni, TableView tablilla, int contador) {
+    protected String leerDatosXML(String codSan) {
         File fichXML = new File("sanitarios.xml");
+        String retorno = null;
 
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -48,15 +50,11 @@ public class LeerXML {
 
                     Element element = (Element) nodo;
 
-                    if (donaciones.codigoSanitarioDat == Integer.parseInt(element.getElementsByTagName("codsan").item(0).getTextContent())) {
-                        donaciones.codigoSanitarioXML = donaciones.codigoSanitarioDat;
-                        donaciones.nombreSanitario = element.getElementsByTagName("nomap").item(0).getTextContent();
-                        donaciones.correo = element.getElementsByTagName("correo").item(0).getTextContent();
-                        donaciones.telefono = element.getElementsByTagName("telefono").item(0).getTextContent();
-                        if (donaciones.dni.equals(dni)) {
-                            tablilla.setValueAt(donaciones.nombreSanitario, contador, 1);
-                            contador++;
-                        }
+                    if (codSan.equals(element.getElementsByTagName("codsan").item(0).getTextContent())) {
+
+                        String correo = element.getElementsByTagName("correo").item(0).getTextContent();
+                        String telefono = element.getElementsByTagName("telefono").item(0).getTextContent();
+                        retorno = telefono;
                     }
                 }
             }
@@ -64,7 +62,9 @@ public class LeerXML {
             System.out.println(e);
             e.printStackTrace();
         }
-    }*/
+        
+        return retorno;
+    }
     
     
 }

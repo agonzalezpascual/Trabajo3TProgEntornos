@@ -23,6 +23,7 @@ public class IODonantesDat {
     public FileOutputStream ficheroSalida;
     public DataOutputStream datosSalida;
     public RandomAccessFile fichero;
+    public LeerXML X = new LeerXML();
     
      public void introDatos(String dniDonante, int codigoSanitario, String fechaDonacionWapilla, float cantidadMl, boolean incidencia) throws IOException {
 
@@ -63,8 +64,7 @@ public class IODonantesDat {
             while (true) {
 
                 String dni = fichero.readUTF();
-                int codigoSanitarioDat = fichero.readInt();
-                String CodBien = Integer.toString(codigoSanitarioDat);
+                String codigoSanitarioDat = Integer.toString(fichero.readInt());
                 String fechaDonacion = fichero.readUTF();
                 String cantidadMl = Float.toString(fichero.readFloat());
                 String incidencia = Boolean.toString(fichero.readBoolean());
@@ -72,7 +72,7 @@ public class IODonantesDat {
                 if (dni.equals(dniDeseado)) {
                     System.out.print("Encontrado");
                 
-                    Don = new Donacion(dni,CodBien,fechaDonacion,cantidadMl,"Hoo","laa","aaaa","s");
+                    Don = new Donacion(dni,codigoSanitarioDat,fechaDonacion,cantidadMl,X.leerDatosXML(codigoSanitarioDat),"laa","aaaa","s");
 
                     
 
