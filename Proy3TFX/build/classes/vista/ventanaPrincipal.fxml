@@ -52,15 +52,24 @@
                         <TextField fx:id="txtDNI" layoutX="341.0" layoutY="104.0">
                            <font>
                               <Font size="18.0" />
-                           </font></TextField>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor></TextField>
                         <Button fx:id="botConDNI" layoutX="477.0" layoutY="169.0" mnemonicParsing="false" onAction="#buscaDonante" text="Consultar DNI">
                            <font>
                               <Font size="17.0" />
-                           </font></Button>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                         <Button fx:id="botConTod" layoutX="270.0" layoutY="169.0" mnemonicParsing="false" onAction="#buscaTodos" text="Consultar todos">
                            <font>
                               <Font size="17.0" />
-                           </font></Button>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                         <Button fx:id="botIns" alignment="CENTER" layoutX="94.0" layoutY="620.0" mnemonicParsing="false" onAction="#meteDonante" prefHeight="50.0" prefWidth="109.0" text="Insertar">
                            <font>
                               <Font size="23.0" />
@@ -71,11 +80,17 @@
                         <Button fx:id="botMod" layoutX="388.0" layoutY="620.0" mnemonicParsing="false" onAction="#modificaDonante" text="Modificar">
                            <font>
                               <Font size="23.0" />
-                           </font></Button>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                         <Button fx:id="botEli" layoutX="700.0" layoutY="620.0" mnemonicParsing="false" onAction="#eliminarDonante" text="Eliminar">
                            <font>
                               <Font size="23.0" />
-                           </font></Button>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                      </children>
                   </AnchorPane>
             </content>
@@ -98,20 +113,32 @@
                            <font>
                               <Font size="18.0" />
                            </font></Label>
-                        <TextField fx:id="txtDonaDNI" layoutX="210.0" layoutY="50.0" prefHeight="39.0" prefWidth="220.0" />
+                        <TextField fx:id="txtDonaDNI" layoutX="210.0" layoutY="50.0" prefHeight="39.0" prefWidth="220.0">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor></TextField>
                         <Button fx:id="botDonaCons" layoutX="474.0" layoutY="49.0" mnemonicParsing="false" onAction="#botConDon" prefHeight="41.0" prefWidth="241.0" text="Consultar Donaciones">
                            <font>
                               <Font size="18.0" />
-                           </font></Button>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                         <TextField fx:id="txtDonaNom" editable="false" layoutX="210.0" layoutY="139.0" prefHeight="36.0" prefWidth="217.0">
                            <font>
                               <Font size="14.0" />
-                           </font></TextField>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor></TextField>
                         <Label layoutX="49.0" layoutY="143.0" text="Nombre Donante">
                            <font>
                               <Font size="18.0" />
                            </font></Label>
-                        <TextField fx:id="txtDonaGrup" editable="false" layoutX="288.0" layoutY="204.0" prefHeight="36.0" prefWidth="139.0" />
+                        <TextField fx:id="txtDonaGrup" editable="false" layoutX="288.0" layoutY="204.0" prefHeight="36.0" prefWidth="139.0">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor></TextField>
                         <Label layoutX="94.0" layoutY="208.0" text="Tipo sangre">
                            <font>
                               <Font size="18.0" />
@@ -132,7 +159,10 @@
                               <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TreeTableView>
-                        <ComboBox fx:id="comboComGrup" layoutX="221.0" layoutY="209.0" prefHeight="39.0" prefWidth="169.0" />
+                        <ComboBox fx:id="comboComGrup" layoutX="221.0" layoutY="209.0" prefHeight="39.0" prefWidth="169.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ComboBox>
                         <Label layoutX="90.0" layoutY="341.0" text="Factor RH">
                            <font>
                               <Font size="24.0" />
@@ -144,8 +174,14 @@
                         <Button fx:id="botCom" layoutX="142.0" layoutY="466.0" mnemonicParsing="false" onAction="#compatibilidad" prefHeight="52.0" prefWidth="214.0" text="Averigua Compatibilidad">
                            <font>
                               <Font size="17.0" />
-                           </font></Button>
-                        <ComboBox fx:id="ComboComRH" layoutX="221.0" layoutY="339.0" prefHeight="39.0" prefWidth="168.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <ComboBox fx:id="ComboComRH" layoutX="221.0" layoutY="339.0" prefHeight="39.0" prefWidth="168.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ComboBox>
                      </children>
                   </AnchorPane>
               </content>

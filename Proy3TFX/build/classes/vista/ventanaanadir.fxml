@@ -19,18 +19,30 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <TextField fx:id="txtDNI" layoutX="95.0" layoutY="55.0" />
-      <TextField fx:id="txtNom" layoutX="95.0" layoutY="103.0" />
+      <TextField fx:id="txtDNI" layoutX="95.0" layoutY="55.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtNom" layoutX="95.0" layoutY="103.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
       <Label layoutX="24.0" layoutY="108.0" text="Nombre">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <TextField fx:id="txtDir" layoutX="95.0" layoutY="156.0" />
+      <TextField fx:id="txtDir" layoutX="95.0" layoutY="156.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
       <Label layoutX="19.0" layoutY="161.0" text="Dirección">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <TextField fx:id="txtTel" layoutX="95.0" layoutY="208.0" />
+      <TextField fx:id="txtTel" layoutX="95.0" layoutY="208.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
       <Label layoutX="22.0" layoutY="213.0" text="Teléfono">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -47,22 +59,46 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <DatePicker fx:id="selFecNa" layoutX="293.0" layoutY="103.0" />
-      <ComboBox fx:id="comboSang" layoutX="419.0" layoutY="172.0" prefHeight="25.0" prefWidth="110.0" />
-      <ComboBox fx:id="comboRH" layoutX="419.0" layoutY="234.0" prefHeight="25.0" prefWidth="110.0" />
-      <Button fx:id="botGuar" layoutX="206.0" layoutY="365.0" mnemonicParsing="false" onAction="#handlerGuardar" prefHeight="31.0" prefWidth="136.0" text="Guardar" />
-      <Button fx:id="botSal" layoutX="206.0" layoutY="411.0" mnemonicParsing="false" onAction="#handlerSalir" prefHeight="31.0" prefWidth="136.0" text="Salir" />
+      <DatePicker fx:id="selFecNa" layoutX="293.0" layoutY="103.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></DatePicker>
+      <ComboBox fx:id="comboSang" layoutX="419.0" layoutY="172.0" prefHeight="25.0" prefWidth="110.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ComboBox fx:id="comboRH" layoutX="419.0" layoutY="234.0" prefHeight="25.0" prefWidth="110.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button fx:id="botGuar" layoutX="206.0" layoutY="365.0" mnemonicParsing="false" onAction="#handlerGuardar" prefHeight="31.0" prefWidth="136.0" text="Guardar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="botSal" layoutX="206.0" layoutY="411.0" mnemonicParsing="false" onAction="#handlerSalir" prefHeight="31.0" prefWidth="136.0" text="Salir">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Label layoutX="19.0" layoutY="315.0" text="Localidad">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <TextField fx:id="txtLoc" layoutX="95.0" layoutY="310.0" />
+      <TextField fx:id="txtLoc" layoutX="95.0" layoutY="310.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
       <Label layoutX="46.0" layoutY="263.0" text="Email">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <TextField fx:id="txtEmail" layoutX="95.0" layoutY="258.0" />
-      <TextField fx:id="txtCodPos" layoutX="340.0" layoutY="310.0" prefHeight="31.0" prefWidth="110.0" />
+      <TextField fx:id="txtEmail" layoutX="95.0" layoutY="258.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtCodPos" layoutX="340.0" layoutY="310.0" prefHeight="31.0" prefWidth="110.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
       <Label layoutX="310.0" layoutY="315.0" text="CP">
          <font>
             <Font name="System Bold" size="15.0" />
