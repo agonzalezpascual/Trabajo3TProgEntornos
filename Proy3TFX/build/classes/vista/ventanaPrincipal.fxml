@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -12,10 +16,8 @@
         <tabs>
           <Tab text="Donantes">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="719.0" prefWidth="892.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="652.0" prefWidth="827.0">
                      <children>
-                        <Label layoutX="278.0" layoutY="112.0" text="DNI" />
-                        <TextField fx:id="txtDNI" layoutX="366.0" layoutY="108.0" />
                         <TableView fx:id="tablaDonantes" layoutX="16.0" layoutY="246.0" prefHeight="345.0" prefWidth="874.0">
                           <columns>
                             <TableColumn fx:id="colDonDNI" prefWidth="86.0" text="DNI" />
@@ -28,11 +30,52 @@
                               <TableColumn fx:id="colDonRH" minWidth="0.0" prefWidth="88.0" text="Factor RH" />
                           </columns>
                         </TableView>
-                        <Button fx:id="botConDNI" layoutX="123.0" layoutY="645.0" mnemonicParsing="false" onAction="#buscaDonante" text="Consultar DNI" />
-                        <Button fx:id="botConTod" layoutX="278.0" layoutY="645.0" mnemonicParsing="false" onAction="#buscaTodos" text="Consultar todos" />
-                        <Button fx:id="botIns" layoutX="442.0" layoutY="645.0" mnemonicParsing="false" onAction="#meteDonante" text="Insertar" />
-                        <Button fx:id="botMod" layoutX="590.0" layoutY="645.0" mnemonicParsing="false" onAction="#modificaDonante" text="Modificar" />
-                        <Button fx:id="botEli" layoutX="724.0" layoutY="645.0" mnemonicParsing="false" onAction="#eliminarDonante" text="Eliminar" />
+                        <ImageView fitHeight="736.0" fitWidth="931.0" layoutX="-13.0" layoutY="-1.0" opacity="0.15" pickOnBounds="true">
+                           <image>
+                              <Image url="@../logoFondo.png" />
+                           </image>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="268.0" layoutY="106.0" text="DNI">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <TextField fx:id="txtDNI" layoutX="341.0" layoutY="104.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                        <Button fx:id="botConDNI" layoutX="477.0" layoutY="169.0" mnemonicParsing="false" onAction="#buscaDonante" text="Consultar DNI">
+                           <font>
+                              <Font size="17.0" />
+                           </font></Button>
+                        <Button fx:id="botConTod" layoutX="270.0" layoutY="169.0" mnemonicParsing="false" onAction="#buscaTodos" text="Consultar todos">
+                           <font>
+                              <Font size="17.0" />
+                           </font></Button>
+                        <Button fx:id="botIns" alignment="CENTER" layoutX="94.0" layoutY="620.0" mnemonicParsing="false" onAction="#meteDonante" prefHeight="50.0" prefWidth="109.0" text="Insertar">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="botMod" layoutX="388.0" layoutY="620.0" mnemonicParsing="false" onAction="#modificaDonante" text="Modificar">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Button>
+                        <Button fx:id="botEli" layoutX="700.0" layoutY="620.0" mnemonicParsing="false" onAction="#eliminarDonante" text="Eliminar">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Button>
                      </children>
                   </AnchorPane>
             </content>
@@ -41,14 +84,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="97.0" layoutY="81.0" text="DNI Donante" />
-                        <TextField fx:id="txtDonaDNI" layoutX="192.0" layoutY="77.0" />
-                        <Button fx:id="botDonaCons" layoutX="494.0" layoutY="77.0" mnemonicParsing="false" onAction="#botConDon" text="Consultar Donaciones" />
-                        <TextField fx:id="txtDonaNom" editable="false" layoutX="192.0" layoutY="153.0" />
-                        <Label layoutX="97.0" layoutY="157.0" text="Nombre Donante" />
-                        <TextField fx:id="txtDonaGrup" editable="false" layoutX="494.0" layoutY="153.0" />
-                        <Label layoutX="399.0" layoutY="157.0" text="Tipo sangre" />
-                        <TableView fx:id="tablaDonanciones" layoutX="18.0" layoutY="223.0" prefHeight="345.0" prefWidth="779.0">
+                        <TableView fx:id="tablaDonanciones" layoutX="49.0" layoutY="259.0" prefHeight="345.0" prefWidth="779.0">
                            <columns>
                               <TableColumn fx:id="colDonaCod" prefWidth="136.0" text="Cod. Sanitario" />
                               <TableColumn fx:id="colDonaNomS" prefWidth="151.0" text="Nombre Sanitario" />
@@ -58,24 +94,85 @@
                               <TableColumn fx:id="colDonaCan" prefWidth="73.0" text="Cantidad" />
                            </columns>
                         </TableView>
+                        <ImageView fitHeight="736.0" fitWidth="931.0" layoutX="-13.0" layoutY="-1.0" opacity="0.15" pickOnBounds="true">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <image>
+                              <Image url="@../logoFondo.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="83.0" layoutY="56.0" text="DNI Donante">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <TextField fx:id="txtDonaDNI" layoutX="210.0" layoutY="50.0" prefHeight="39.0" prefWidth="220.0" />
+                        <Button fx:id="botDonaCons" layoutX="474.0" layoutY="49.0" mnemonicParsing="false" onAction="#botConDon" prefHeight="41.0" prefWidth="241.0" text="Consultar Donaciones">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                        <TextField fx:id="txtDonaNom" editable="false" layoutX="210.0" layoutY="139.0" prefHeight="36.0" prefWidth="217.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <Label layoutX="49.0" layoutY="143.0" text="Nombre Donante">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <TextField fx:id="txtDonaGrup" editable="false" layoutX="288.0" layoutY="204.0" prefHeight="36.0" prefWidth="139.0" />
+                        <Label layoutX="94.0" layoutY="208.0" text="Tipo sangre">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
             <Tab text="Compatibilidad">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="728.0" prefWidth="905.0">
                      <children>
-                        <ComboBox fx:id="comboComGrup" layoutX="249.0" layoutY="109.0" prefHeight="25.0" prefWidth="79.0" />
-                        <Label layoutX="126.0" layoutY="187.0" text="Factor RH" />
-                        <Label layoutX="126.0" layoutY="113.0" text="Grupo sanguíneo" />
-                        <Button fx:id="botCom" layoutX="144.0" layoutY="292.0" mnemonicParsing="false" onAction="#compatibilidad" text="Averigua Compatibilidad" />
-                        <ComboBox fx:id="ComboComRH" layoutX="249.0" layoutY="183.0" prefHeight="25.0" prefWidth="79.0" />
-                        <TreeTableView fx:id="tablaArbolComp" layoutX="525.0" layoutY="90.0" prefHeight="428.0" prefWidth="283.0">
+                        <TreeTableView fx:id="tablaArbolComp" layoutX="428.0" layoutY="47.0" prefHeight="604.0" prefWidth="441.0">
                           <columns>
                             <TreeTableColumn fx:id="arbolComp" prefWidth="282.0" text="Cuadro de Compatibilidades" />
                           </columns>
+                           <columnResizePolicy>
+                              <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TreeTableView>
+                        <ImageView fitHeight="736.0" fitWidth="931.0" layoutX="-13.0" layoutY="-1.0" opacity="0.15" pickOnBounds="true">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <image>
+                              <Image url="@../logoFondo.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox fx:id="comboComGrup" layoutX="222.0" layoutY="339.0" prefHeight="39.0" prefWidth="169.0" />
+                        <Label layoutX="90.0" layoutY="341.0" text="Factor RH">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <Label layoutX="11.0" layoutY="209.0" text="Grupo sanguíneo">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <Button fx:id="botCom" layoutX="142.0" layoutY="466.0" mnemonicParsing="false" onAction="#compatibilidad" prefHeight="52.0" prefWidth="214.0" text="Averigua Compatibilidad" />
+                        <ComboBox fx:id="ComboComRH" layoutX="222.0" layoutY="207.0" prefHeight="39.0" prefWidth="168.0" />
                      </children>
                   </AnchorPane>
               </content>

@@ -21,7 +21,7 @@ public class IOBaseDatos {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
             String urlCon = "jdbc:mariadb://localhost:3306/proy3te5";
-            Connection conexBd = DriverManager.getConnection(urlCon, "root", "");
+            Connection conexBd = DriverManager.getConnection(urlCon, "root", "boqui123");
             Statement encapsulaCons = conexBd.createStatement();
 
             int filActualizadas = encapsulaCons.executeUpdate(actualiza);
@@ -41,7 +41,7 @@ public class IOBaseDatos {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
             String urlCon = "jdbc:mariadb://localhost:3306/proy3te5";
-            Connection conexBd = DriverManager.getConnection(urlCon, "root", "");
+            Connection conexBd = DriverManager.getConnection(urlCon, "root", "boqui123");
             Statement encapsulaCons = conexBd.createStatement();
 
             //"INSERT INTO DONANTES(DNI, Nombre, Direccion, CodPostal, Localidad, FechaNac, Correo, Telefono, GrupoSang, FactorRH) VALUES('" + dni + "', '" + nomDonante + "', '" + direccionDonante + "', '" + codPostal + "', '" + localidad + "', '" + fechaNac + "', '" + mail + "', '" + telefono + "', '" + grupoSang + "', '" + factorRH + "')
