@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controlador;
 
 import javafx.application.Application;
@@ -17,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author dam1
+ * @author Grupo2
  */
 public class Proy3TFX extends Application {
     
@@ -32,9 +28,10 @@ public class Proy3TFX extends Application {
     }
 
 
-    /**
-     * @param args the command line arguments
-     */
+/***
+ * 
+ * @param args 
+ */
     public static void main(String[] args) {
         launch(args);
     }

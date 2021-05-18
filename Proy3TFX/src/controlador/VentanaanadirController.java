@@ -26,7 +26,7 @@ import modelo.IOBaseDatos;
 /**
  * FXML Controller class
  *
- * @author dam1
+ * @author Grupo2
  */
 public class VentanaanadirController implements Initializable {
     
@@ -72,7 +72,9 @@ public class VentanaanadirController implements Initializable {
         iniciaCombos();
     }    
     
-    
+    /***
+     * Inicia el combobox
+     */
      public void iniciaCombos(){
     
     grupoSang = FXCollections.observableArrayList();
@@ -90,7 +92,10 @@ public class VentanaanadirController implements Initializable {
     
     }
     
-    
+    /***
+     * 
+     * @param donantes ObservableList
+     */
      public void initAttributtes(ObservableList<Donante> donantes) {
         this.donantes = donantes;
     }

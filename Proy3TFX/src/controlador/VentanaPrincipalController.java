@@ -48,7 +48,7 @@ import modelo.IODonantesDat;
 /**
  * FXML Controller class
  *
- * @author dam1
+ * @author Grupo2
  */
 public class VentanaPrincipalController implements Initializable {
 
@@ -168,8 +168,10 @@ public class VentanaPrincipalController implements Initializable {
     private IOBaseDatos IO = new IOBaseDatos();
     private IODonantesDat IOD = new IODonantesDat();
     
-    /**
-     * Initializes the controller class.
+    /***
+     * Método que inicia la clase controladora
+     * @param url
+     * @param rb 
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -224,7 +226,10 @@ public class VentanaPrincipalController implements Initializable {
     this.Odo.add("0");
     
     }
-    
+    /***
+     * Método que introduzce los registros en la tabla y la refresca
+     * @throws SQLException 
+     */
     public void iniciaRegistros() throws SQLException{
     
     ResultSet r = IO.introduceRegistros("SELECT * FROM DONANTES");
@@ -250,7 +255,9 @@ public class VentanaPrincipalController implements Initializable {
     
     
     
-    
+    /***
+     * Método que inicia el combobox de los grupos sanguíneos
+     */
     public void iniciaCombos(){
     
     grupoSang = FXCollections.observableArrayList();
@@ -268,7 +275,9 @@ public class VentanaPrincipalController implements Initializable {
         ComboComRH.setItems(factorRH);
     
     }
-    
+    /***
+     * Método que inicia la tabla Donantes y la tabla Donaciones
+     */
     public void iniciaTablaDon(){
     
     //Inicia la tabla Donantes
@@ -302,7 +311,10 @@ public class VentanaPrincipalController implements Initializable {
     
     
     }
-    
+    /***
+     * Método que inserta un donante en la tabla Donantes
+     * @throws IOException Lanza una excepción que controlamos con un try-catch si no se añade al donante correctamente.
+     */
     @FXML
     public void meteDonante() throws IOException{
         /*try{
@@ -370,7 +382,10 @@ public class VentanaPrincipalController implements Initializable {
     
     
     }
-
+    /***
+     * Método para modificar una entrada de la tabla Donantes
+     * @param event ActionEvent
+     */
     @FXML
     private void modificaDonante(ActionEvent event) {
         /*try{
@@ -433,7 +448,10 @@ public class VentanaPrincipalController implements Initializable {
         }
         
     }
-    
+    /***
+     * Método para eliminar una entrada de la tabla donantes
+     * @throws SQLException 
+     */
     @FXML
     private void eliminarDonante() throws SQLException{
 
@@ -452,7 +470,10 @@ public class VentanaPrincipalController implements Initializable {
 
     
     }
-
+    /***
+     * Método para buscar una entrada en la tabla Donantes
+     * @param event ActionEvent
+     */
     @FXML
     private void buscaDonante(ActionEvent event) {
         
@@ -469,14 +490,20 @@ public class VentanaPrincipalController implements Initializable {
             }
             this.tablaDonantes.setItems(filtroDonantes);
     }
-
+    /***
+     * Actualiza los datos de la tabla Donantes
+     * @param event ActionEvent
+     */
     @FXML
     private void buscaTodos(ActionEvent event) {
         
         this.tablaDonantes.setItems(donantes);
         
     }
-
+    /***
+     * Método para comprobar la compatibilidad entre los grupos sanguíneos
+     * @param event ActionEvent
+     */
     @FXML
     private void compatibilidad(ActionEvent event) {
         
@@ -560,7 +587,11 @@ public class VentanaPrincipalController implements Initializable {
         
     
     }
-
+    /***
+     * Método que agrega la entrada a la tabla Donantes al pulsar el botón
+     * @param event ActionEvent
+     * @throws IOException 
+     */
     @FXML
     private void botConDon(ActionEvent event) throws IOException {
         
