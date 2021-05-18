@@ -72,7 +72,7 @@ public class IODonantesDat {
                 if (dni.equals(dniDeseado)) {
                     System.out.print("Encontrado");
                 
-                    Don = new Donacion(dni,codigoSanitarioDat,fechaDonacion,cantidadMl,X.leerDatosXML(codigoSanitarioDat),"laa","aaaa","s");
+                    Don = new Donacion(dni,codigoSanitarioDat,cantidadMl,"true",X.leerDatosXML(codigoSanitarioDat,2),X.leerDatosXML(codigoSanitarioDat,3),X.leerDatosXML(codigoSanitarioDat,1),fechaDonacion);
 
                     
 

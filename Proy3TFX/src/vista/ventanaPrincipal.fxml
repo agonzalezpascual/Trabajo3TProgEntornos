@@ -12,13 +12,28 @@
 
 <AnchorPane id="AnchorPane" prefHeight="765.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VentanaPrincipalController">
    <children>
+      <ImageView fitHeight="736.0" fitWidth="931.0" opacity="0.17" pickOnBounds="true">
+         <image>
+            <Image url="@../logoFondo.png" />
+         </image>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
       <TabPane layoutX="-1.0" prefHeight="756.0" prefWidth="906.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Donantes">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="652.0" prefWidth="827.0">
                      <children>
-                        <TableView fx:id="tablaDonantes" layoutX="16.0" layoutY="246.0" prefHeight="345.0" prefWidth="874.0">
+                        <TableView fx:id="tablaDonantes" layoutX="16.0" layoutY="246.0" opacity="0.87" prefHeight="345.0" prefWidth="874.0">
                           <columns>
                             <TableColumn fx:id="colDonDNI" prefWidth="86.0" text="DNI" />
                             <TableColumn fx:id="colDonNom" prefWidth="99.0" text="Nombre" />
@@ -30,21 +45,6 @@
                               <TableColumn fx:id="colDonRH" minWidth="0.0" prefWidth="88.0" text="Factor RH" />
                           </columns>
                         </TableView>
-                        <ImageView fitHeight="736.0" fitWidth="931.0" layoutX="-13.0" layoutY="-1.0" opacity="0.15" pickOnBounds="true">
-                           <image>
-                              <Image url="@../logoFondo.png" />
-                           </image>
-                           <effect>
-                              <Lighting>
-                                 <bumpInput>
-                                    <Shadow />
-                                 </bumpInput>
-                                 <light>
-                                    <Light.Distant />
-                                 </light>
-                              </Lighting>
-                           </effect>
-                        </ImageView>
                         <Label layoutX="268.0" layoutY="106.0" text="DNI">
                            <font>
                               <Font size="24.0" />
@@ -84,7 +84,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="tablaDonanciones" layoutX="49.0" layoutY="259.0" prefHeight="345.0" prefWidth="779.0">
+                        <TableView fx:id="tablaDonanciones" layoutX="49.0" layoutY="259.0" opacity="0.87" prefHeight="345.0" prefWidth="779.0">
                            <columns>
                               <TableColumn fx:id="colDonaCod" prefWidth="136.0" text="Cod. Sanitario" />
                               <TableColumn fx:id="colDonaNomS" prefWidth="151.0" text="Nombre Sanitario" />
@@ -94,21 +94,6 @@
                               <TableColumn fx:id="colDonaCan" prefWidth="73.0" text="Cantidad" />
                            </columns>
                         </TableView>
-                        <ImageView fitHeight="736.0" fitWidth="931.0" layoutX="-13.0" layoutY="-1.0" opacity="0.15" pickOnBounds="true">
-                           <effect>
-                              <Lighting>
-                                 <bumpInput>
-                                    <Shadow />
-                                 </bumpInput>
-                                 <light>
-                                    <Light.Distant />
-                                 </light>
-                              </Lighting>
-                           </effect>
-                           <image>
-                              <Image url="@../logoFondo.png" />
-                           </image>
-                        </ImageView>
                         <Label layoutX="83.0" layoutY="56.0" text="DNI Donante">
                            <font>
                               <Font size="18.0" />
@@ -139,7 +124,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="728.0" prefWidth="905.0">
                      <children>
-                        <TreeTableView fx:id="tablaArbolComp" layoutX="428.0" layoutY="47.0" prefHeight="604.0" prefWidth="441.0">
+                        <TreeTableView fx:id="tablaArbolComp" layoutX="428.0" layoutY="47.0" opacity="0.87" prefHeight="604.0" prefWidth="441.0">
                           <columns>
                             <TreeTableColumn fx:id="arbolComp" prefWidth="282.0" text="Cuadro de Compatibilidades" />
                           </columns>
@@ -147,22 +132,7 @@
                               <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TreeTableView>
-                        <ImageView fitHeight="736.0" fitWidth="931.0" layoutX="-13.0" layoutY="-1.0" opacity="0.15" pickOnBounds="true">
-                           <effect>
-                              <Lighting>
-                                 <bumpInput>
-                                    <Shadow />
-                                 </bumpInput>
-                                 <light>
-                                    <Light.Distant />
-                                 </light>
-                              </Lighting>
-                           </effect>
-                           <image>
-                              <Image url="@../logoFondo.png" />
-                           </image>
-                        </ImageView>
-                        <ComboBox fx:id="comboComGrup" layoutX="222.0" layoutY="339.0" prefHeight="39.0" prefWidth="169.0" />
+                        <ComboBox fx:id="comboComGrup" layoutX="221.0" layoutY="209.0" prefHeight="39.0" prefWidth="169.0" />
                         <Label layoutX="90.0" layoutY="341.0" text="Factor RH">
                            <font>
                               <Font size="24.0" />
@@ -171,8 +141,11 @@
                            <font>
                               <Font size="24.0" />
                            </font></Label>
-                        <Button fx:id="botCom" layoutX="142.0" layoutY="466.0" mnemonicParsing="false" onAction="#compatibilidad" prefHeight="52.0" prefWidth="214.0" text="Averigua Compatibilidad" />
-                        <ComboBox fx:id="ComboComRH" layoutX="222.0" layoutY="207.0" prefHeight="39.0" prefWidth="168.0" />
+                        <Button fx:id="botCom" layoutX="142.0" layoutY="466.0" mnemonicParsing="false" onAction="#compatibilidad" prefHeight="52.0" prefWidth="214.0" text="Averigua Compatibilidad">
+                           <font>
+                              <Font size="17.0" />
+                           </font></Button>
+                        <ComboBox fx:id="ComboComRH" layoutX="221.0" layoutY="339.0" prefHeight="39.0" prefWidth="168.0" />
                      </children>
                   </AnchorPane>
               </content>

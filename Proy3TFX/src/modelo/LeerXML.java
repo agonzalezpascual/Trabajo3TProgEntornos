@@ -28,7 +28,7 @@ import org.w3c.dom.NodeList;
  */
 public class LeerXML {
     
-    protected String leerDatosXML(String codSan) {
+    protected String leerDatosXML(String codSan, int opc) {
         File fichXML = new File("sanitarios.xml");
         String retorno = null;
 
@@ -49,13 +49,33 @@ public class LeerXML {
                 if (nodo.getNodeType() == Node.ELEMENT_NODE) {
 
                     Element element = (Element) nodo;
+                    
+                    if(opc==1){
+
+                    if (codSan.equals(element.getElementsByTagName("codsan").item(0).getTextContent())) {
+
+                       
+                        String telefono = element.getElementsByTagName("telefono").item(0).getTextContent();
+                        retorno = telefono;
+                    }}
+                    if(opc==2){
 
                     if (codSan.equals(element.getElementsByTagName("codsan").item(0).getTextContent())) {
 
                         String correo = element.getElementsByTagName("correo").item(0).getTextContent();
-                        String telefono = element.getElementsByTagName("telefono").item(0).getTextContent();
-                        retorno = telefono;
-                    }
+                        
+                        retorno = correo;
+                    }}
+                    if(opc==3){
+
+                    if (codSan.equals(element.getElementsByTagName("codsan").item(0).getTextContent())) {
+
+                        String nom = element.getElementsByTagName("nomap").item(0).getTextContent();
+                        
+                        retorno = nom;
+                    }}
+                    
+                    
                 }
             }
         } catch (Exception e) {
