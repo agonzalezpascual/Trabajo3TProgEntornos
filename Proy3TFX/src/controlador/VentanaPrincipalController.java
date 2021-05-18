@@ -170,6 +170,9 @@ public class VentanaPrincipalController implements Initializable {
         }
         try {
             this.IOD.introDatos("12345698F", 2, "2015-01-26", 501,false);
+            this.IOD.introDatos("12345698F", 2, "2016-01-26", 530,false);
+            this.IOD.introDatos("12345698F", 2, "2017-01-26", 530,false);
+            this.IOD.introDatos("12345666R", 1, "2015-02-20", 400,false);
         } catch (IOException ex) {
             Logger.getLogger(VentanaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -580,12 +583,26 @@ public class VentanaPrincipalController implements Initializable {
     private void botConDon(ActionEvent event) throws IOException {
         
         String DNIDonante = this.txtDonaDNI.getText();
-        this.donaciones.add(IOD.leerDatosDat(DNIDonante));
+    
+        
+         //this.donaciones.addAll(IOD.leerDatosDat(DNIDonante));
+         for(Donacion d:IOD.leerDatosDat(DNIDonante)){
+                
+                    this.donaciones.add(d);
+               
+                }
+         
+         
+        /*for(int i = 0;i>IOD.leerDatosDat(DNIDonante).toArray().;i++){
+                    
+            this.donaciones.add(IOD.leerDatosDat(DNIDonante).get(i));}*/
+
+        
         this.tablaDonanciones.refresh();
         
         
         for(Donante d:this.donantes){
-                if(d.getDNI().contains(DNIDonante)){
+                if(d.getDNI().equals(DNIDonante)){
                     this.txtDonaNom.setText(d.getNombre());
                     this.txtDonaGrup.setText(d.getGrupoSang()+d.getFactorRH());
                
@@ -598,3 +615,4 @@ public class VentanaPrincipalController implements Initializable {
     
     
 }
+

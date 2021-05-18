@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.util.Objects;
+
 /**
  *
  * @author dam1
@@ -94,6 +96,36 @@ public class Donacion {
 
     public void setTelSan(String telSan) {
         this.telSan = telSan;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Donacion other = (Donacion) obj;
+        if (!Objects.equals(this.DNI, other.DNI)) {
+            return false;
+        }
+        if (!Objects.equals(this.codSan, other.codSan)) {
+            return false;
+        }
+        if (!Objects.equals(this.fecDon, other.fecDon)) {
+            return false;
+        }
+        return true;
     }
     
     
