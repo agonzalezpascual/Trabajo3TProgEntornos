@@ -54,17 +54,7 @@ public class VentanaPrincipalController implements Initializable {
 
     @FXML
     private TextField txtDNI;
-    @FXML
-    private TextField txtNom;
-    @FXML
-    private TextField txtDir;
-    @FXML
-    private TextField txtTel;
-    @FXML
-    private DatePicker Fecna;
-    @FXML
     private ComboBox<String> comboGrup;
-    @FXML
     private ComboBox<String> ComboRH;
     @FXML
     private TableView<Donante> tablaDonantes;
@@ -137,12 +127,6 @@ public class VentanaPrincipalController implements Initializable {
     
     private ObservableList<TreeItem<String>> compatiblesD;
     
-    @FXML
-    private TextField txtCodPos;
-    @FXML
-    private TextField txtEmail;
-    @FXML
-    private TextField txtLoc;
     @FXML
     private TableColumn<Donante, String> colDonEmail;
     @FXML
@@ -265,13 +249,13 @@ public class VentanaPrincipalController implements Initializable {
         grupoSang.add("A");
         grupoSang.add("B");
         grupoSang.add("0");
-        comboGrup.setItems(grupoSang);
+        //comboGrup.setItems(grupoSang);
         comboComGrup.setItems(grupoSang);
         
         factorRH = FXCollections.observableArrayList();
         factorRH.add("+");
         factorRH.add("-");
-        ComboRH.setItems(factorRH);
+        //ComboRH.setItems(factorRH);
         ComboComRH.setItems(factorRH);
     
     }
