@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ventanaprincipalController">
+   <children>
+      <Label layoutX="65.0" layoutY="58.0" text="FECHA INICIO" />
+      <DatePicker fx:id="filtFecIn" layoutX="41.0" layoutY="91.0" prefHeight="25.0" prefWidth="121.0" />
+      <DatePicker fx:id="FiltEnt" layoutX="427.0" layoutY="91.0" prefHeight="25.0" prefWidth="121.0" />
+      <Label layoutX="443.0" layoutY="58.0" text="FECHA ENTREGA" />
+      <Label layoutX="278.0" layoutY="58.0" text="CLIENTE" />
+      <ComboBox fx:id="FiltCli" layoutX="225.0" layoutY="91.0" onAction="#handlerfiltro" prefWidth="150.0" />
+      <TableView fx:id="TabAlq" layoutX="38.0" layoutY="137.0" prefHeight="200.0" prefWidth="534.0">
+        <columns>
+          <TableColumn fx:id="ColMat" prefWidth="92.0" text="MATRICULA" />
+          <TableColumn fx:id="ColMar" prefWidth="73.0" text="MARCA" />
+            <TableColumn fx:id="ColPre" prefWidth="60.0" text="PRECIO" />
+            <TableColumn fx:id="ColFecAL" prefWidth="130.0" text="FECHA ALQUILER" />
+            <TableColumn fx:id="ColFecEn" prefWidth="119.0" text="FECHA ENTREGA" />
+            <TableColumn fx:id="ColTot" prefWidth="58.0" text="TOTAL" />
+        </columns>
+      </TableView>
+      <Button fx:id="botIns" layoutX="266.0" layoutY="350.0" mnemonicParsing="false" onAction="#handlerInsertar" text="INSERTAR" />
+   </children>
+</AnchorPane>

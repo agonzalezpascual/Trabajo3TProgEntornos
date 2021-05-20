@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="454.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ventanaanadirController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Label layoutX="70.0" layoutY="69.0" text="Fecha Alquiler" />
+      <DatePicker fx:id="FecAlq" layoutX="39.0" layoutY="108.0" prefHeight="25.0" prefWidth="142.0" />
+      <DatePicker fx:id="FecEnt" layoutX="236.0" layoutY="108.0" prefHeight="25.0" prefWidth="132.0" />
+      <Label layoutX="265.0" layoutY="69.0" text="Fecha Entrega" />
+      <Label fx:id="label1" layoutX="323.0" layoutY="120.0" minHeight="16" minWidth="69" />
+      <Label layoutX="436.0" layoutY="69.0" text="Vehículo" />
+      <Label layoutX="575.0" layoutY="69.0" text="Cliente" />
+      <ComboBox fx:id="Vehic" layoutX="412.0" layoutY="108.0" onAction="#handlerVehiculo" prefHeight="25.0" prefWidth="93.0" />
+      <ComboBox fx:id="Clien" layoutX="541.0" layoutY="108.0" onAction="#handlerClien" prefHeight="25.0" prefWidth="104.0" />
+      <Label layoutX="32.0" layoutY="180.0" text="DESCRIPCION" />
+      <TextField fx:id="txtDesc" editable="false" layoutX="107.0" layoutY="176.0" />
+      <TextField fx:id="txtMarc" editable="false" layoutX="107.0" layoutY="221.0" />
+      <Label layoutX="35.0" layoutY="225.0" text="MARCA" />
+      <TextField fx:id="txtKil" editable="false" layoutX="107.0" layoutY="268.0" />
+      <Label layoutX="34.0" layoutY="271.0" text="KILOMETROS" />
+      <TextField fx:id="txtPre" editable="false" layoutX="107.0" layoutY="313.0" />
+      <Label layoutX="36.0" layoutY="317.0" text="PRECIO" />
+      <Label layoutX="349.0" layoutY="271.0" text="POBLACION" />
+      <TextField fx:id="txtPob" editable="false" layoutX="424.0" layoutY="267.0" />
+      <Label layoutX="351.0" layoutY="224.0" text="DIRECCION" />
+      <TextField fx:id="txtDir" editable="false" layoutX="424.0" layoutY="220.0" />
+      <TextField fx:id="txtNif" editable="false" layoutX="424.0" layoutY="175.0" />
+      <Label layoutX="348.0" layoutY="179.0" text="NIF" />
+      <TextField fx:id="txtTot" editable="false" layoutX="268.0" layoutY="351.0" />
+      <Label layoutX="216.0" layoutY="355.0" text="TOTAL" />
+      <Button fx:id="botGrab" layoutX="312.0" layoutY="386.0" mnemonicParsing="false" onAction="#handlerGrab" text="Grabar" />
+    </children>
+</AnchorPane>
