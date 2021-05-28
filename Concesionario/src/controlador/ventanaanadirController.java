@@ -72,7 +72,7 @@ public class ventanaanadirController implements Initializable {
     private Servicio alta;
     
     
-    ConexionMySQL conexion = new ConexionMySQL("localhost:3306","alquiler_vehiculos","root","root");
+    ConexionMySQL conexion = new ConexionMySQL("localhost:3306","alquilervehiculos","root","dam2021");
 
     /**
      * Initializes the controller class.

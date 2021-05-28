@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Concesionario.jar" size="12028" download="eager" />
+    <jar href="Concesionario.jar" size="12050" download="eager" />
     <jar href="lib\ConexionDB.jar" size="48392" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.22-bin.jar" size="832960" download="eager" />
   </resources>

@@ -66,7 +66,7 @@ public class ventanaprincipalController implements Initializable {
     //Crear Filtro por NIF
     private ObservableList<Servicio> filtroservicios;
     private ObservableList<String> filtservicios;
-    ConexionMySQL conexion = new ConexionMySQL("localhost:3306","alquiler_vehiculos","root","root");
+    ConexionMySQL conexion = new ConexionMySQL("localhost:3306","alquilervehiculos","root","dam2021");
     //Hasta aquí
     
     
